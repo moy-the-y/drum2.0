@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YetAnotherOnlineDrum</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/animation.css" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- social preview  -->
+    <meta property="og:title" content="Just another online drum for fun!" />
+    <meta
+      property="og:description"
+      content="An online drum, playing drum using keyboard."
+    />
+    <meta
+      property="og:image"
+      content="https://moy-the-y.github.io/res/social-preview/social-preview.png"
+    />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div class="drumkit">
+      <img src="./res/visual/drumkit-ascii.png" alt="" class="drumkit__img" />
+    </div>
+    <div class="preset">
+      <button class="preset__btn">save preset</button>
+      <button class="preset_btn">load preset</button>
+    </div>
+    <input
+      type="range"
+      name="volume"
+      class="slider"
+      id="volume-slider"
+      min="0.3"
+      max="1.5"
+      step="0.05"
+      value="0.9"
+    />
+    <div class="ticker-container" id="ticker-container">
+      <div
+        class="ticker__cover ticker__cover-left"
+        id="ticker__cover-left"
+      ></div>
+      <div class="ticker__show-area" id="ticker__show-area"></div>
+      <span class="ticker__text" id="ticker__text"
+        >snare:a/s &nbsp kick:z/x &nbsp closed-hihat:r/t &nbsp opened-hihat:w/e
+        &nbsp crash:y &nbsp ride:u &nbsp toms:g,h,j</span
+      >
+      <div
+        class="ticker__cover ticker__cover-right"
+        id="ticker__cover-right"
+      ></div>
+    </div>
+  </body>
+  <script type="module" src="./src/main.js"></script>
+</html>
