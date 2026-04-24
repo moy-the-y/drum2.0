@@ -1,0 +1,19 @@
+.popover {
+  --height: 50vh;
+  --width: 50vw;
+  --position-x: calc(50vw - var(--width)/2);
+  --position-y: calc(50vh - var(--height)/2);
+}
+
+.popover {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  left: var(--position-x);
+  top: var(--position-y);
+}
+
+.popover-looking {
+  background-color: rgb(130, 129, 126);
+  opacity: 0.4;
+}

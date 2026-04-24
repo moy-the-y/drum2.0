@@ -1,5 +1,6 @@
 import { triggerRandomAnimation } from "./animation-trigger.js";
 import "./ticker.js";
+import "./popover.js";
 
 const auctx = new AudioContext();
 // create and set up gain node

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/animation.css" />
     <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/popover.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,11 +30,26 @@
   </head>
   <body>
     <div class="drumkit">
-      <img src="./res/visual/drumkit-ascii.png" alt="" class="drumkit__img" />
+      <img
+        src="./res/visual/drumkit-ascii.png"
+        alt=""
+        class="drumkit__img"
+        draggable="false"
+      />
     </div>
-    <div class="preset">
-      <button class="preset__btn">save preset</button>
-      <button class="preset_btn">load preset</button>
+    <div
+      class="popover popover-looking"
+      id="save-preset-popover"
+      style="display: none"
+    ></div>
+    <div
+      class="popover popover-looking"
+      id="load-preset-popover"
+      style="display: none"
+    ></div>
+    <div class="preset-buttons-container">
+      <button class="preset__btn" id="save-preset-btn" draggable="false">save preset</button>
+      <button class="preset__btn" id="load-preset-btn" draggable="false">load preset</button>
     </div>
     <input
       type="range"

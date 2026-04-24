@@ -12,6 +12,10 @@
   font-style: normal;
 }
 
+button {
+  user-select: none;
+}
+
 body {
   background-color: var(--main-background-color);
 
@@ -35,11 +39,14 @@ body {
   left: -7%;
 }
 
-.preset {
+.preset-buttons-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1vw;
+}
+
+.preset__btn {
 }
 
 .slider {
@@ -48,24 +55,6 @@ body {
   accent-color: var(--font-color-alt);
   cursor: pointer;
   outline: none;
-}
-
-.tip {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  color: var(--font-color);
-  position: absolute;
-  font-size: 2vh;
-  top: -15%;
-  left: -8%;
-  text-shadow:
-    -1px -1px 0 #58431f,
-    1px -1px 0 #58431f,
-    -1px 1px 0 #58431f,
-    1px 1px 0 #58431f;
-
-  display: inline-block;
-  width: max-content;
 }
 
 .ticker-container {
