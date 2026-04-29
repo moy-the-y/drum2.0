@@ -13,7 +13,7 @@
   top: var(--position-y);
 }
 
-.popover-looking {
+.popover-style {
   background-color: rgb(130, 129, 126);
   opacity: 0.4;
 }
