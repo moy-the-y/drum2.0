@@ -17,3 +17,82 @@
   background-color: rgb(130, 129, 126);
   opacity: 0.4;
 }
+
+.drumkit-popover-trigger {
+  border: 2px solid gold;
+  z-index: 1;
+}
+
+.drumkit-popover-trigger:hover {
+  border-color: violet;
+}
+
+#drumkit-popover-trigger-container {
+  height: var(--drumkit-area-height);
+  width: var(--drumkit-popover-trigger-container-width);
+  position: absolute;
+}
+
+#drumkit-popover-trigger-snare {
+  position: absolute;
+  top: 47%;
+  left: 17%;
+  width: 16%;
+  height: 18%;
+}
+
+#drumkit-popover-trigger-hihat {
+  position: absolute;
+  top: 49%;
+  left: -3%;
+  width: 19%;
+  height: 23%;
+}
+
+#drumkit-popover-trigger-crash {
+  position: absolute;
+  top: 13%;
+  left: 9%;
+  width: 26%;
+  height: 25%;
+}
+
+#drumkit-popover-trigger-tom1 {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  width: 11%;
+  height: 14%;
+}
+
+#drumkit-popover-trigger-tom2 {
+  position: absolute;
+  top: 39%;
+  left: 59%;
+  width: 15%;
+  height: 14%;
+}
+
+#drumkit-popover-trigger-tom3 {
+  position: absolute;
+  top: 41%;
+  left: 77%;
+  width: 20%;
+  height: 21%;
+}
+
+#drumkit-popover-trigger-kick {
+  position: absolute;
+  top: 24%;
+  left: 46%;
+  width: 13%;
+  height: 35%;
+}
+
+#drumkit-popover-trigger-ride {
+  position: absolute;
+  top: 7%;
+  left: 63%;
+  width: 32%;
+  height: 30%;
+}

@@ -2,6 +2,10 @@
   --main-background-color: #000000;
   --font-color: rgb(255, 247, 0);
   --font-color-alt: rgb(255, 68, 0);
+
+  --drumkit-image-center-adjustment: -7%;
+  --drumkit-area-height: 60vh;
+  --drumkit-popover-trigger-container-width: 65vw;
 }
 
 *,
@@ -30,13 +34,13 @@ body {
 }
 
 .drumkit {
-  height: 60vh;
+  height: var(--drumkit-area-height);
 }
 
 .drumkit__img {
   height: 100%;
   position: relative;
-  left: -7%;
+  left: var(--drumkit-image-center-adjustment);
 }
 
 .preset-buttons-container {
