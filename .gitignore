@@ -1,2 +1,4 @@
 npx_host.ps1
 .vscode/
+.*
+node_modules
