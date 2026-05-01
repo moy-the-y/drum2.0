@@ -1,3 +1,5 @@
+/* stylelint-disable custom-property-pattern */
+/* stylelint-disable selector-class-pattern */
 .popover {
   --height: 50vh;
   --width: 50vw;
@@ -9,6 +11,7 @@
   height: var(--height);
   left: var(--position-x);
   top: var(--position-y);
+  z-index: var(--drumkit-popover-zIndex);
 }
 
 .popover-style {
@@ -19,13 +22,18 @@
 .drumkit-popover-trigger {
   background-color: rgb(255 250 250 / 0%);
   border-radius: 22%;
-  z-index: 1;
+  z-index: var(--drumkit-popover-trigger-zIndex);
 }
 
-.drumkit-popover-trigger:hover {
+.drumkit-popover-trigger__hover {
   transition: all 0.24s ease-out;
   background-color: rgb(255 250 250 / 20%);
 }
+
+/* .drumkit-popover-trigger:hover {
+  transition: all 0.24s ease-out;
+  background-color: rgb(255 250 250 / 20%);
+} */
 
 #drumkit-popover-trigger-container {
   height: var(--drumkit-area-height);

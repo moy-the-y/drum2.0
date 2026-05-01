@@ -1,3 +1,4 @@
+/* stylelint-disable custom-property-pattern */
 /* stylelint-disable selector-class-pattern */
 :root {
   --main-background-color: #000;
@@ -7,6 +8,8 @@
   --drumkit-area-height: 60vh;
   --drumkit-area-width: 75vh;
   --drumkit-popover-trigger-container-width: 65vw;
+  --drumkit-popover-trigger-zIndex: 1;
+  --drumkit-popover-zIndex: 10;
 }
 
 *,
@@ -41,6 +44,7 @@ body {
   height: 100%;
   position: relative;
   left: var(--drumkit-image-center-adjustment);
+  user-select: none;
 }
 
 .preset-buttons-container {

@@ -86,3 +86,21 @@
     animation-timing-function: ease-out;
   }
 }
+
+.popover-trigger-hover {
+  animation: popover-trigger-hover 0.33s ease-out both;
+}
+
+@keyframes popover-trigger-hover {
+  0% {
+    background-color: rgb(255 250 250 / 0%);
+  }
+
+  50% {
+    background-color: rgb(255 250 250 / 20%);
+  }
+
+  100% {
+    background-color: rgb(255 250 250 / 0%);
+  }
+}
