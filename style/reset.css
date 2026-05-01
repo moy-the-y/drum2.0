@@ -1,23 +1,40 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-*:not(dialog), *::before, *::after {
-    margin: 0;
+*:not(dialog),
+*::before,
+*::after {
+  margin: 0;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -25,7 +42,12 @@ p {
   text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
@@ -35,6 +57,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#root, #__next {
+#root,
+/* stylelint-disable-next-line selector-id-pattern */
+#__next {
   isolation: isolate;
 }

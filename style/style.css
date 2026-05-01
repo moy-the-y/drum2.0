@@ -1,10 +1,11 @@
+/* stylelint-disable selector-class-pattern */
 :root {
-  --main-background-color: #000000;
-  --font-color: rgb(255, 247, 0);
-  --font-color-alt: rgb(255, 68, 0);
-
+  --main-background-color: #000;
+  --font-color: rgb(255 247 0);
+  --font-color-alt: rgb(255 68 0);
   --drumkit-image-center-adjustment: -7%;
   --drumkit-area-height: 60vh;
+  --drumkit-area-width: 75vh;
   --drumkit-popover-trigger-container-width: 65vw;
 }
 
@@ -22,10 +23,8 @@ button {
 
 body {
   background-color: var(--main-background-color);
-
   height: 100vh;
   margin: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +34,7 @@ body {
 
 .drumkit {
   height: var(--drumkit-area-height);
+  width: var(--drumkit-area-width);
 }
 
 .drumkit__img {
@@ -50,9 +50,6 @@ body {
   gap: 1vw;
 }
 
-.preset__btn {
-}
-
 .slider {
   width: 12%;
   height: 6%;
@@ -64,27 +61,22 @@ body {
 .ticker-container {
   --height: 2.5vh;
   --cover-width: 15vw;
-}
 
-.ticker-container {
   display: flex;
   width: 100vw;
   height: var(--height);
   align-items: center;
   justify-content: space-between;
-
   position: relative;
-
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .ticker__text {
   display: inline-block;
-
   color: var(--font-color);
   position: absolute;
   z-index: -1;
+
   /* slightly smaller to prevent it goes out of the box */
   font-size: calc(var(--height) - 0.7vh);
 
@@ -92,7 +84,6 @@ body {
   it will be overwrite by dynamic inline style 
   that set in the js */
   left: 55%;
-
   white-space: nowrap;
 }
 

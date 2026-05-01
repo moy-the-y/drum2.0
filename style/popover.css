@@ -3,9 +3,7 @@
   --width: 50vw;
   --position-x: calc(50vw - var(--width)/2);
   --position-y: calc(50vh - var(--height)/2);
-}
 
-.popover {
   position: absolute;
   width: var(--width);
   height: var(--height);
@@ -14,7 +12,7 @@
 }
 
 .popover-style {
-  background-color: rgb(130, 129, 126);
+  background-color: rgb(130 129 126);
   opacity: 0.4;
 }
 
@@ -29,7 +27,7 @@
 
 #drumkit-popover-trigger-container {
   height: var(--drumkit-area-height);
-  width: var(--drumkit-popover-trigger-container-width);
+  width: var(--drumkit-area-width);
   position: absolute;
 }
 
@@ -37,7 +35,7 @@
   position: absolute;
   top: 47%;
   left: 17%;
-  width: 16%;
+  width: 14%;
   height: 18%;
 }
 
@@ -53,38 +51,38 @@
   position: absolute;
   top: 13%;
   left: 9%;
-  width: 26%;
+  width: 23%;
   height: 25%;
 }
 
 #drumkit-popover-trigger-tom1 {
   position: absolute;
   top: 35%;
-  left: 35%;
-  width: 11%;
+  left: 32%;
+  width: 10%;
   height: 14%;
 }
 
 #drumkit-popover-trigger-tom2 {
   position: absolute;
   top: 39%;
-  left: 59%;
+  left: 56%;
   width: 15%;
-  height: 14%;
+  height: 15%;
 }
 
 #drumkit-popover-trigger-tom3 {
   position: absolute;
   top: 41%;
-  left: 77%;
-  width: 20%;
+  left: 72%;
+  width: 17%;
   height: 21%;
 }
 
 #drumkit-popover-trigger-kick {
   position: absolute;
   top: 24%;
-  left: 46%;
+  left: 42%;
   width: 13%;
   height: 35%;
 }
@@ -92,7 +90,7 @@
 #drumkit-popover-trigger-ride {
   position: absolute;
   top: 7%;
-  left: 63%;
-  width: 32%;
+  left: 58%;
+  width: 30%;
   height: 30%;
 }
