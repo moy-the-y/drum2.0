@@ -46,6 +46,7 @@ button:active {
   transform: scale(0.95);
 }
 
+/* drumkit */
 .drumkit {
   height: var(--drumkit-area-height);
   width: var(--drumkit-area-width);
@@ -58,13 +59,27 @@ button:active {
   user-select: none;
 }
 
+/* preset buttons group */
 .preset-buttons-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1vw;
+  height: 5vh;
+  width: 80vw;
+  container-type: size;
 }
 
+.preset-buttons-container > button {
+  height: 100cqh;
+  font-size: 50cqh;
+}
+
+.preset-button {
+  color: var(--font-color);
+}
+
+/* slider */
 .slider-base {
   cursor: pointer;
   outline: none;
@@ -72,10 +87,11 @@ button:active {
 }
 
 .slider-master {
-  width: 12%;
-  height: 6%;
+  width: 12vw;
+  height: 6vh;
 }
 
+/* ticker */
 .ticker-container {
   --height: 2.5vh;
   --cover-width: 15vw;
@@ -116,6 +132,17 @@ button:active {
   background-color: var(--background-color-main);
 }
 
-.preset-button {
-  color: var(--font-color);
+/* temp */
+
+/* .drumkit {
+  flex: 1;
 }
+.preset-buttons-container {
+  flex: 1;
+}
+.slider-master {
+  flex: 1;
+}
+.ticker-container {
+  flex: 2;
+} */
