@@ -85,10 +85,26 @@
       style="display: none"
     ></div>
     <div
-      class="popover popover-style"
+      class="popover popover-style drumkit-part-popover"
       id="drumkit-snare-popover"
       style="display: none"
-    ></div>
+    >
+      <div class="drumkit-part-popover-main-area"></div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">✓</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">✕</button>
+      </div>
+      <!-- <input
+        type="range"
+        class=".slider-base"
+        id="snare-volume-slider"
+        min="0.3"
+        max="1.5"
+        step="0.05"
+        value="0.9"
+      /> -->
+    </div>
     <div
       class="popover popover-style"
       id="drumkit-hihat-popover"
@@ -126,17 +142,17 @@
     ></div>
 
     <div class="preset-buttons-container">
-      <button class="preset__btn" id="save-preset-btn" draggable="false">
+      <button class="preset-button" id="save-preset-btn" draggable="false">
         save preset
       </button>
-      <button class="preset__btn" id="load-preset-btn" draggable="false">
+      <button class="preset-button" id="load-preset-btn" draggable="false">
         load preset
       </button>
     </div>
     <input
       type="range"
       name="volume"
-      class="slider"
+      class="slider-base slider-master"
       id="volume-slider"
       min="0.3"
       max="1.5"

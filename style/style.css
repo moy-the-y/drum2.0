@@ -1,9 +1,10 @@
 /* stylelint-disable custom-property-pattern */
 /* stylelint-disable selector-class-pattern */
 :root {
-  --main-background-color: #000;
-  --font-color: rgb(255 247 0);
-  --font-color-alt: rgb(255 68 0);
+  --background-color-main: #000;
+  --background-color-alt: #242020;
+  --border-color: rgb(37 28 22);
+  --font-color: #ccc398;
   --drumkit-image-center-adjustment: -7%;
   --drumkit-area-height: 60vh;
   --drumkit-area-width: 75vh;
@@ -20,12 +21,8 @@
   font-style: normal;
 }
 
-button {
-  user-select: none;
-}
-
 body {
-  background-color: var(--main-background-color);
+  background-color: var(--background-color-main);
   height: 100vh;
   margin: 0;
   display: flex;
@@ -33,6 +30,20 @@ body {
   align-items: center;
   justify-content: center;
   gap: 3vh;
+}
+
+button {
+  user-select: none;
+  background-color: var(--background-color-alt);
+}
+
+button:hover {
+  border-color: var(--font-color);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .drumkit {
@@ -54,12 +65,15 @@ body {
   gap: 1vw;
 }
 
-.slider {
-  width: 12%;
-  height: 6%;
-  accent-color: var(--font-color-alt);
+.slider-base {
   cursor: pointer;
   outline: none;
+  accent-color: var(--font-color);
+}
+
+.slider-master {
+  width: 12%;
+  height: 6%;
 }
 
 .ticker-container {
@@ -99,5 +113,9 @@ body {
 .ticker__cover {
   width: var(--cover-width);
   height: var(--height);
-  background-color: var(--main-background-color);
+  background-color: var(--background-color-main);
+}
+
+.preset-button {
+  color: var(--font-color);
 }

@@ -15,8 +15,8 @@
 }
 
 .popover-style {
-  background-color: rgb(130 129 126);
-  opacity: 0.4;
+  background-color: var(--background-color-alt);
+  opacity: 0.85;
 }
 
 .drumkit-popover-trigger {
@@ -29,11 +29,6 @@
   transition: all 0.24s ease-out;
   background-color: rgb(255 250 250 / 20%);
 }
-
-/* .drumkit-popover-trigger:hover {
-  transition: all 0.24s ease-out;
-  background-color: rgb(255 250 250 / 20%);
-} */
 
 #drumkit-popover-trigger-container {
   height: var(--drumkit-area-height);
@@ -103,4 +98,45 @@
   left: 58%;
   width: 30%;
   height: 30%;
+}
+
+.snare-volume-slider {
+  width: 5vw;
+  height: 5vh;
+}
+
+.drumkit-part-popover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.drumkit-part-popover-button-group {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex: 1;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  container-type: size;
+}
+
+.drumkit-part-popover-button-group > button {
+  flex: 1;
+  color: var(--font-color);
+  font-size: 80cqh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 3px 3px rgba(190, 155, 155, 0.4);
+}
+
+.drumkit-part-popover-main-area {
+  display: grid;
+  flex: 5;
+  border: 1px solid var(--border-color);
+  width: 100%;
 }
