@@ -19,6 +19,7 @@
   font-family: "Rock Salt", cursive;
   font-weight: 400;
   font-style: normal;
+  color: var(--font-color);
 }
 
 body {
@@ -46,6 +47,46 @@ button:active {
   transform: scale(0.95);
 }
 
+.vertical-flexbox-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.selection-style-base,
+.selection-style-base::picker(select) {
+  appearance: base-select;
+  cursor: pointer;
+  background-color: var(--background-color-alt);
+  position-try-fallbacks: none;
+}
+
+.selection-style-base::picker-icon {
+  transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: rotate(-90deg);
+}
+
+.selection-style-base:open::picker-icon {
+  transform: rotate(0deg);
+}
+
+.selection-style-base::picker(select) {
+  transform: scale(1);
+  opacity: 1;
+  transition:
+    opacity 0.3s cubic-bezier(0.65, 0, 0.35, 1),
+    transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  scrollbar-width: none;
+}
+
+@starting-style {
+  .selection-style-base::picker(select) {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
 /* drumkit */
 .drumkit {
   height: var(--drumkit-area-height);
@@ -60,7 +101,7 @@ button:active {
 }
 
 /* preset buttons group */
-.preset-buttons-container {
+.preset-buttons-group {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +111,7 @@ button:active {
   container-type: size;
 }
 
-.preset-buttons-container > button {
+.preset-buttons-group > button {
   height: 100cqh;
   font-size: 50cqh;
 }
@@ -89,6 +130,10 @@ button:active {
 .slider-master {
   width: 12vw;
   height: 6vh;
+}
+
+.slider--vertical {
+  transform: rotate(-90deg);
 }
 
 /* ticker */
@@ -131,18 +176,3 @@ button:active {
   height: var(--height);
   background-color: var(--background-color-main);
 }
-
-/* temp */
-
-/* .drumkit {
-  flex: 1;
-}
-.preset-buttons-container {
-  flex: 1;
-}
-.slider-master {
-  flex: 1;
-}
-.ticker-container {
-  flex: 2;
-} */
