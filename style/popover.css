@@ -16,7 +16,20 @@
 
 .popover-style {
   background-color: var(--background-color-alt);
-  opacity: 0.85;
+
+  /* pop-out animation */
+  transform: scale(1);
+  opacity: 1;
+  transition:
+    opacity 0.25s cubic-bezier(0.2, 0, 0, 1),
+    transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@starting-style {
+  .popover-style {
+    opacity: 0;
+    transform: scale(0.1);
+  }
 }
 
 .drumkit-popover-trigger {
