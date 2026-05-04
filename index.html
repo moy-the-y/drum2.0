@@ -73,7 +73,7 @@
       />
     </div>
 
-    <!-- popovers -->
+    <!-- #region Popovers -->
     <div
       class="popover popover-style"
       id="save-preset-popover"
@@ -90,9 +90,7 @@
       style="display: none"
     >
       <div class="drumkit-part-popover-main-area">
-        <div
-          class="popover-volume-container main-area__component"
-        >
+        <div class="popover-volume-container main-area__component">
           <label for="snare-volume-slider">volume</label>
           <input
             type="range"
@@ -104,9 +102,7 @@
             value="0.75"
           />
         </div>
-        <div
-          class="popover-tone-container main-area__component"
-        >
+        <div class="popover-tone-container main-area__component">
           <label for="snare-tone">tone</label>
           <select
             name="snare-tone"
@@ -125,40 +121,238 @@
       </div>
     </div>
     <div
-      class="popover popover-style"
+      class="popover popover-style drumkit-part-popover"
       id="drumkit-hihat-popover"
       style="display: none"
-    ></div>
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="hihat-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="hihat-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="hihat-tone">tone</label>
+          <select
+            name="hihat-tone"
+            id="hihat-tone"
+            class="selection-style-base"
+          >
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
     <div
-      class="popover popover-style"
+      class="popover popover-style drumkit-part-popover"
       id="drumkit-crash-popover"
       style="display: none"
-    ></div>
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="crash-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="crash-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="crash-tone">tone</label>
+          <select
+            name="crash-tone"
+            id="crash-tone"
+            class="selection-style-base"
+          >
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
     <div
-      class="popover popover-style"
-      id="drumkit-tom1-popover"
-      style="display: none"
-    ></div>
-    <div
-      class="popover popover-style"
-      id="drumkit-tom2-popover"
-      style="display: none"
-    ></div>
-    <div
-      class="popover popover-style"
-      id="drumkit-tom3-popover"
-      style="display: none"
-    ></div>
-    <div
-      class="popover popover-style"
-      id="drumkit-kick-popover"
-      style="display: none"
-    ></div>
-    <div
-      class="popover popover-style"
+      class="popover popover-style drumkit-part-popover"
       id="drumkit-ride-popover"
       style="display: none"
-    ></div>
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="ride-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="ride-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="ride-tone">tone</label>
+          <select name="ride-tone" id="ride-tone" class="selection-style-base">
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
+    <div
+      class="popover popover-style drumkit-part-popover"
+      id="drumkit-kick-popover"
+      style="display: none"
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="kick-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="kick-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="kick-tone">tone</label>
+          <select name="kick-tone" id="kick-tone" class="selection-style-base">
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
+    <div
+      class="popover popover-style drumkit-part-popover"
+      id="drumkit-tom1-popover"
+      style="display: none"
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="tom1-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="tom1-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="tom1-tone">tone</label>
+          <select name="tom1-tone" id="tom1-tone" class="selection-style-base">
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
+    <div
+      class="popover popover-style drumkit-part-popover"
+      id="drumkit-tom2-popover"
+      style="display: none"
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="tom2-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="tom2-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="tom2-tone">tone</label>
+          <select name="tom2-tone" id="tom2-tone" class="selection-style-base">
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
+    <div
+      class="popover popover-style drumkit-part-popover"
+      id="drumkit-tom3-popover"
+      style="display: none"
+    >
+      <div class="drumkit-part-popover-main-area">
+        <div class="popover-volume-container main-area__component">
+          <label for="tom3-volume-slider">volume</label>
+          <input
+            type="range"
+            class="slider-base slider--vertical"
+            id="tom3-volume-slider"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover-tone-container main-area__component">
+          <label for="tom3-tone">tone</label>
+          <select name="tom3-tone" id="tom3-tone" class="selection-style-base">
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumkit-part-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
+    <!-- #endregion -->
 
     <div class="preset-buttons-group">
       <button class="preset-button" id="save-preset-btn" draggable="false">
