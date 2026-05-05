@@ -8,8 +8,8 @@
   --drumkit-image-center-adjustment: -7%;
   --drumkit-area-height: 60vh;
   --drumkit-area-width: 75vh;
-  --drumkit-popover-trigger-container-width: 65vw;
-  --drumkit-popover-trigger-zIndex: 1;
+  --drumkit__pop-triggers-group-width: 65vw;
+  --drumpart-pop-trigger-zIndex: 1;
   --drumkit-popover-zIndex: 10;
 }
 
@@ -54,24 +54,24 @@ button:active {
   justify-content: center;
 }
 
-.selection-style-base,
-.selection-style-base::picker(select) {
+.select--style,
+.select--style::picker(select) {
   appearance: base-select;
   cursor: pointer;
   background-color: var(--background-color-alt);
   position-try-fallbacks: none;
 }
 
-.selection-style-base::picker-icon {
+.select--style::picker-icon {
   transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
   transform: rotate(-90deg);
 }
 
-.selection-style-base:open::picker-icon {
+.select--style:open::picker-icon {
   transform: rotate(0deg);
 }
 
-.selection-style-base::picker(select) {
+.select--style::picker(select) {
   transform: scale(1);
   opacity: 1;
   transition:
@@ -81,7 +81,7 @@ button:active {
 }
 
 @starting-style {
-  .selection-style-base::picker(select) {
+  .select--style::picker(select) {
     opacity: 0;
     transform: scale(0.9);
   }
@@ -101,7 +101,7 @@ button:active {
 }
 
 /* preset buttons group */
-.preset-buttons-group {
+.preset-button-group {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +111,7 @@ button:active {
   container-type: size;
 }
 
-.preset-buttons-group > button {
+.preset-button-group > button {
   height: 100cqh;
   font-size: 50cqh;
 }
@@ -121,13 +121,13 @@ button:active {
 }
 
 /* slider */
-.slider-base {
+.slider {
   cursor: pointer;
   outline: none;
   accent-color: var(--font-color);
 }
 
-.slider-master {
+.slider--master {
   width: 12vw;
   height: 6vh;
 }

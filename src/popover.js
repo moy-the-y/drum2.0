@@ -68,10 +68,10 @@ class PopoverManager {
     // style logic
     triggerElement.addEventListener("mouseover", () => {
       if (this.#isFreezing) return;
-      triggerElement.classList.add("drumkit-popover-trigger__hover");
+      triggerElement.classList.add("drumpart-pop-trigger__hover");
     });
     triggerElement.addEventListener("mouseleave", () => {
-      triggerElement.classList.remove("drumkit-popover-trigger__hover");
+      triggerElement.classList.remove("drumpart-pop-trigger__hover");
     });
 
     this.#registeredPopovers.set(triggerElement, popoverDiv);
@@ -81,43 +81,43 @@ class PopoverManager {
 const manager = new PopoverManager();
 
 manager.registerPopoverOnClick(
-  document.querySelector("#save-preset-btn"),
+  document.querySelector("#save-preset-button"),
   document.querySelector("#save-preset-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#load-preset-btn"),
+  document.querySelector("#load-preset-button"),
   document.querySelector("#load-preset-popover"),
 );
 
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-snare"),
+  document.querySelector("#drumpart-pop-trigger-snare"),
   document.querySelector("#drumkit-snare-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-hihat"),
+  document.querySelector("#drumpart-pop-trigger-hihat"),
   document.querySelector("#drumkit-hihat-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-crash"),
+  document.querySelector("#drumpart-pop-trigger-crash"),
   document.querySelector("#drumkit-crash-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-tom1"),
+  document.querySelector("#drumpart-pop-trigger-tom1"),
   document.querySelector("#drumkit-tom1-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-tom2"),
+  document.querySelector("#drumpart-pop-trigger-tom2"),
   document.querySelector("#drumkit-tom2-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-tom3"),
+  document.querySelector("#drumpart-pop-trigger-tom3"),
   document.querySelector("#drumkit-tom3-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-kick"),
+  document.querySelector("#drumpart-pop-trigger-kick"),
   document.querySelector("#drumkit-kick-popover"),
 );
 manager.registerPopoverOnClick(
-  document.querySelector("#drumkit-popover-trigger-ride"),
+  document.querySelector("#drumpart-pop-trigger-ride"),
   document.querySelector("#drumkit-ride-popover"),
 );
