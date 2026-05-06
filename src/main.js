@@ -1,6 +1,6 @@
-import { triggerRandomAnimation } from "./animation-trigger.js";
-import "./ticker.js";
-import "./popover.js";
+import { triggerRandomAnimation } from "./ui/animation-trigger.js";
+import "./ui/ticker.js";
+import "./ui/popover.js";
 
 const auctx = new AudioContext();
 // create and set up gain node
@@ -85,6 +85,7 @@ function volumeChangeHandler() {
 
 function buildPlaySoundFn(audioContext, audioBuffer, gainNode) {
   return () => {
+    // this is the actual code that play the sound
     const source = new AudioBufferSourceNode(audioContext, {
       buffer: audioBuffer,
     });

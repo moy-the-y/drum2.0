@@ -7,11 +7,11 @@ class PopoverManager {
   constructor() {
     // default close behavior
     window.addEventListener("click", (triggerEvent) =>
-      this.#closeLastPopover(triggerEvent),
+      this.#closeByClickOutside(triggerEvent),
     );
   }
 
-  #closeLastPopover = (triggerEvent) => {
+  #closeByClickOutside = (triggerEvent) => {
     if (this.#currentPoppedStack.length === 0) {
       return;
     }
@@ -26,8 +26,15 @@ class PopoverManager {
       return;
     }
 
-    const popover = this.#currentPoppedStack.pop();
-    popover.style = "display:none";
+    this.#closePopover();
+  };
+
+  #closeByClickCancel = () => {
+    this.#closePopover();
+  };
+
+  #closePopover = () => {
+    this.#currentPoppedStack.pop().style = "display:none";
     this.#isFreezing = false; // reenable other triggers.
   };
 
@@ -76,8 +83,24 @@ class PopoverManager {
 
     this.#registeredPopovers.set(triggerElement, popoverDiv);
   };
+
+  // called after all popovers have been registered
+  registerCancelButtons() {
+    // close by clicking 'X' button
+    for (const popover of this.#registeredPopovers.values()) {
+      const cancelButton = popover.querySelector("#cancel");
+      if (!cancelButton) {
+        continue;
+      }
+
+      cancelButton.addEventListener("click", () => {
+        this.#closeByClickCancel();
+      });
+    }
+  }
 }
 
+// register listener code
 const manager = new PopoverManager();
 
 manager.registerPopoverOnClick(
@@ -121,3 +144,5 @@ manager.registerPopoverOnClick(
   document.querySelector("#drumpart-pop-trigger-ride"),
   document.querySelector("#drumkit-ride-popover"),
 );
+
+manager.registerCancelButtons();
