@@ -33,6 +33,10 @@ class PopoverManager {
     this.#closePopover();
   };
 
+  #closeByClickConfirm = () => {
+    this.#closePopover();
+  };
+
   #closePopover = () => {
     this.#currentPoppedStack.pop().style = "display:none";
     this.#isFreezing = false; // reenable other triggers.
@@ -95,6 +99,18 @@ class PopoverManager {
 
       cancelButton.addEventListener("click", () => {
         this.#closeByClickCancel();
+      });
+    }
+
+    // close by clicking '🗸' button
+    for (const popover of this.#registeredPopovers.values()) {
+      const confirmButton = popover.querySelector("#confirm");
+      if (!confirmButton) {
+        continue;
+      }
+
+      confirmButton.addEventListener("click", () => {
+        this.#closeByClickConfirm();
       });
     }
   }
