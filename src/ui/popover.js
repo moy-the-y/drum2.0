@@ -137,6 +137,10 @@ manager.registerPopoverOnClick(
   document.querySelector("#drumkit-hihat-open-popover"),
 );
 manager.registerPopoverOnClick(
+  document.querySelector("#drumpart-pop-trigger-hihat-close"),
+  document.querySelector("#drumkit-hihat-close-popover"),
+);
+manager.registerPopoverOnClick(
   document.querySelector("#drumpart-pop-trigger-crash"),
   document.querySelector("#drumkit-crash-popover"),
 );

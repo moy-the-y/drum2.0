@@ -36,6 +36,10 @@
           class="drumpart-pop-trigger"
           id="drumpart-pop-trigger-hihat-open"
         ></div>
+        <div
+          class="drumpart-pop-trigger"
+          id="drumpart-pop-trigger-hihat-close"
+        ></div>
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-crash"></div>
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-tom1"></div>
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-tom2"></div>
@@ -121,6 +125,44 @@
           <select
             name="hihat-open-tone"
             id="hihat-open-tone"
+            class="select--style"
+          >
+            <option value="rock">rock</option>
+            <option value="punk">punk</option>
+          </select>
+        </div>
+      </div>
+      <div class="drumpart-popover-button-group">
+        <button id="confirm" draggable="false">🗸</button>
+        <button id="reset" draggable="false">↺</button>
+        <button id="cancel" draggable="false">𐄂</button>
+      </div>
+    </div>
+    <div
+      class="popover popover--style drumpart-popover"
+      id="drumkit-hihat-close-popover"
+      style="display: none"
+    >
+      <div class="drumpart-popover__main">
+        <div
+          class="popover__volume-container drumpart-popover__main__component"
+        >
+          <label for="hihat-close-volume">volume</label>
+          <input
+            type="range"
+            class="slider slider--vertical"
+            id="hihat-close-volume"
+            min="0"
+            max="1.5"
+            step="0.05"
+            value="0.75"
+          />
+        </div>
+        <div class="popover__tone-container drumpart-popover__main__component">
+          <label for="hihat-close-tone">tone</label>
+          <select
+            name="hihat-close-tone"
+            id="hihat-close-tone"
             class="select--style"
           >
             <option value="rock">rock</option>

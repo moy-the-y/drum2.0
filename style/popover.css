@@ -59,10 +59,18 @@
 
 #drumpart-pop-trigger-hihat-open {
   position: absolute;
-  top: 49%;
+  top: 47%;
+  left: -4%;
+  width: 20%;
+  height: 15%;
+}
+
+#drumpart-pop-trigger-hihat-close {
+  position: absolute;
+  top: 60%;
   left: -3%;
   width: 19%;
-  height: 23%;
+  height: 14%;
 }
 
 #drumpart-pop-trigger-crash {
