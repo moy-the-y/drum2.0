@@ -32,7 +32,10 @@
     <div class="drumkit">
       <div id="drumkit__pop-triggers-group">
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-snare"></div>
-        <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-hihat"></div>
+        <div
+          class="drumpart-pop-trigger"
+          id="drumpart-pop-trigger-hihat-open"
+        ></div>
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-crash"></div>
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-tom1"></div>
         <div class="drumpart-pop-trigger" id="drumpart-pop-trigger-tom2"></div>
@@ -95,18 +98,18 @@
     </div>
     <div
       class="popover popover--style drumpart-popover"
-      id="drumkit-hihat-popover"
+      id="drumkit-hihat-open-popover"
       style="display: none"
     >
       <div class="drumpart-popover__main">
         <div
           class="popover__volume-container drumpart-popover__main__component"
         >
-          <label for="hihat-volume">volume</label>
+          <label for="hihat-open-volume">volume</label>
           <input
             type="range"
             class="slider slider--vertical"
-            id="hihat-volume"
+            id="hihat-open-volume"
             min="0"
             max="1.5"
             step="0.05"
@@ -114,8 +117,12 @@
           />
         </div>
         <div class="popover__tone-container drumpart-popover__main__component">
-          <label for="hihat-tone">tone</label>
-          <select name="hihat-tone" id="hihat-tone" class="select--style">
+          <label for="hihat-open-tone">tone</label>
+          <select
+            name="hihat-open-tone"
+            id="hihat-open-tone"
+            class="select--style"
+          >
             <option value="rock">rock</option>
             <option value="punk">punk</option>
           </select>
