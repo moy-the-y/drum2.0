@@ -1,0 +1,38 @@
+{
+  "snare": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "kick": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "hihat-open": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "hihat-close": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "crash": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "ride": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "tom1": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "tom2": {
+    "volume": 1,
+    "tone": "punk"
+  },
+  "tom3": {
+    "volume": 1,
+    "tone": "punk"
+  }
+}

@@ -62,3 +62,8 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* reset this because the default focus outline is glitching and also, it is not necessary to use it at all */
+:focus-visible {
+  outline: none;
+}

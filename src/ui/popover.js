@@ -5,10 +5,19 @@ class PopoverManager {
   #isFreezing = false;
 
   constructor() {
-    // default close behavior
-    window.addEventListener("click", (triggerEvent) =>
-      this.#closeByClickOutside(triggerEvent),
-    );
+    // // default close behavior
+    // window.addEventListener("click", (triggerEvent) =>
+    //   this.#closeByClickOutside(triggerEvent),
+    // );
+    this.#setPreventDefault();
+  }
+
+  #setPreventDefault() {
+    [...document.querySelectorAll("select")].forEach((select) => {
+      select.addEventListener("keydown", (ev) => {
+        ev.preventDefault();
+      });
+    });
   }
 
   #closeByClickOutside = (triggerEvent) => {
