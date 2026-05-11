@@ -9,8 +9,8 @@
   --drumkit-area-height: 60vh;
   --drumkit-area-width: 75vh;
   --drumkit__pop-triggers-group-width: 65vw;
-  --drumpart-pop-trigger-zIndex: 1;
-  --drumkit-popover-zIndex: 10;
+  --drumpart-pop-trigger-zIndex: 10;
+  --drumkit-popover-zIndex: 20;
 }
 
 *,

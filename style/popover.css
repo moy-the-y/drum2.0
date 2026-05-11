@@ -34,7 +34,7 @@
 
 .drumpart-pop-trigger {
   background-color: rgb(255 250 250 / 0%);
-  border-radius: 22%;
+  border-radius: 100%;
   z-index: var(--drumpart-pop-trigger-zIndex);
 }
 
@@ -51,10 +51,11 @@
 
 #drumpart-pop-trigger-snare {
   position: absolute;
-  top: 47%;
-  left: 17%;
-  width: 14%;
-  height: 18%;
+  top: 45%;
+  left: 14%;
+  width: 17%;
+  height: 20%;
+  border-radius: 100%;
 }
 
 #drumpart-pop-trigger-hihat-open {
@@ -62,63 +63,70 @@
   top: 47%;
   left: -4%;
   width: 20%;
-  height: 15%;
+  height: 14%;
+  border-radius: 0%;
+  border-top-left-radius: 150%;
+  border-top-right-radius: 150%;
 }
 
 #drumpart-pop-trigger-hihat-close {
   position: absolute;
-  top: 60%;
-  left: -3%;
-  width: 19%;
-  height: 14%;
+  top: 61%;
+  left: -4%;
+  width: 20%;
+  height: 12%;
+  border-radius: 0%;
+  border-bottom-left-radius: 150%;
+  border-bottom-right-radius: 150%;
 }
 
 #drumpart-pop-trigger-crash {
   position: absolute;
-  top: 13%;
-  left: 9%;
-  width: 23%;
-  height: 25%;
+  top: 11%;
+  left: 8%;
+  width: 26%;
+  height: 33%;
 }
 
 #drumpart-pop-trigger-tom1 {
   position: absolute;
-  top: 35%;
-  left: 32%;
-  width: 10%;
-  height: 14%;
+  top: 33%;
+  left: 29%;
+  width: 13%;
+  height: 17%;
 }
 
 #drumpart-pop-trigger-tom2 {
   position: absolute;
-  top: 39%;
-  left: 56%;
-  width: 15%;
-  height: 15%;
+  top: 35%;
+  left: 53%;
+  width: 16%;
+  height: 20%;
 }
 
 #drumpart-pop-trigger-tom3 {
   position: absolute;
-  top: 41%;
-  left: 72%;
-  width: 17%;
-  height: 21%;
+  top: 40%;
+  left: 68%;
+  width: 22%;
+  height: 24%;
 }
 
 #drumpart-pop-trigger-kick {
   position: absolute;
   top: 24%;
-  left: 42%;
-  width: 13%;
-  height: 35%;
+  left: 35%;
+  width: 23%;
+  height: 32%;
+  border-radius: 22%;
 }
 
 #drumpart-pop-trigger-ride {
   position: absolute;
-  top: 7%;
-  left: 58%;
-  width: 30%;
-  height: 30%;
+  top: 3%;
+  left: 55%;
+  width: 34%;
+  height: 42%;
 }
 
 /* todo: i don't know what this does but i m afraid to delete it */
