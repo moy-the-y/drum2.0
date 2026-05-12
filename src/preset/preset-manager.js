@@ -49,8 +49,9 @@ export class PresetManager {
       const volume = presetJsonObj[drumpart]["volume"];
       const tone = presetJsonObj[drumpart]["tone"];
 
-      this.#drumkit.getPart(drumpart).setGainNodeVolume(volume);
+      this.#drumkit.getPart(drumpart).setVolume(volume);
       this.#drumkit.getPart(drumpart).setTone(tone);
+      this.#drumkit.getPart(drumpart).updateResetValues();
     }
   }
 }

@@ -22,10 +22,10 @@ export class DrumPart {
   #currentVolume;
 
   /** @type {String} */
-  #toneAtPop;
+  #toneForReset;
 
   /** @type {Number} */
-  #volumeAtPop;
+  #volumeForReset;
 
   // elements
   /** @type {HTMLInputElement} */
@@ -71,13 +71,12 @@ export class DrumPart {
 
   #initState() {
     // 1.get initial(current) values from elements
-    this.#currentTone = this.#toneSettingElement.value;
-    this.#currentVolume = this.#volumeSettingElement.value;
+    this.setTone(this.#toneSettingElement.value);
+    this.setVolume(this.#volumeSettingElement.value);
 
     // 2.set up internal states using current values
-    this.setGainNodeVolume(this.#currentVolume);
-    this.#volumeAtPop = this.#currentVolume;
-    this.#toneAtPop = this.#currentTone;
+    this.#volumeForReset = this.#currentVolume;
+    this.#toneForReset = this.#currentTone;
   }
 
   /**
@@ -87,18 +86,17 @@ export class DrumPart {
    */
   #setListeners() {
     this.#volumeSettingElement.addEventListener("input", () => {
-      this.#currentVolume = this.#volumeSettingElement.value;
-      this.setGainNodeVolume(this.#currentVolume);
+      this.setVolume(this.#volumeSettingElement.value);
     });
 
     this.#toneSettingElement.addEventListener("change", () => {
-      this.#currentTone = this.#toneSettingElement.value;
+      this.setTone(this.#toneSettingElement.value);
     });
 
     // User at this point might have done some changes to audio settings,
     // these buttons provide options for keep, undo, or discard changes to web audio api.
     this.#confirmButton.addEventListener("click", () => {
-      this.#doAtExit();
+      this.updateResetValues();
     });
 
     this.#resetButton.addEventListener("click", () => {
@@ -107,32 +105,45 @@ export class DrumPart {
 
     this.#cancelButton.addEventListener("click", () => {
       this.#resetToPopState();
-      this.#doAtExit();
+      this.updateResetValues();
     });
   }
 
   // reset to when the setting panel was popped out
   #resetToPopState = () => {
-    this.#currentVolume = this.#volumeAtPop;
-    this.setGainNodeVolume(this.#currentVolume);
-    this.#currentTone = this.#toneAtPop;
-
-    this.#volumeSettingElement.value = this.#currentVolume;
-    this.#toneSettingElement.value = this.#currentTone;
+    this.setVolume(this.#volumeForReset);
+    this.setTone(this.#toneForReset);
   };
 
-  #doAtExit = () => {
-    // set for the 'atPop' variables for the next popover
-    this.#volumeAtPop = this.#currentVolume;
-    this.#toneAtPop = this.#currentTone;
+  /**
+   * When being called, set current values to 'reset value',
+   * after this, but before function being called again,
+   * we are able to reset to the values here.
+   * It is like creating a new 'save point'.
+   */
+  updateResetValues = () => {
+    // set for the 'atPop'/'for reset purpose' variables for the next reset operation
+    this.#volumeForReset = this.#currentVolume;
+    this.#toneForReset = this.#currentTone;
   };
 
-  setGainNodeVolume = (volume) => {
+  setVolume = (volume) => {
+    // set internal state
+    this.#currentVolume = volume;
+
+    // set audio api
     this.#gainNode.gain.setValueAtTime(volume, this.#auctx.currentTime);
+
+    // set ui element
+    this.#volumeSettingElement.value = volume;
   };
 
   setTone = (tone) => {
+    // set internal state
     this.#currentTone = tone;
+
+    // set ui element
+    this.#toneSettingElement.value = tone;
   };
 
   playSound = () => {
