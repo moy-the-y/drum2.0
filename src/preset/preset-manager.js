@@ -1,5 +1,6 @@
 import { Constants } from "../core/constants.js";
 import { DrumKit } from "../core/drumkit.js";
+import { LoadPresetComponent } from "../ui/preset/load-preset-component.js";
 
 export class PresetManager {
   /** @type {Map<String, Object>} */
@@ -8,22 +9,32 @@ export class PresetManager {
   /** @type {DrumKit} */
   #drumkit;
 
-  //todo element listener and shit..
+  /** @type {LoadPresetComponent} */
+  #loadPresetComponent;
 
-  constructor(drumkit) {
-    this.#setDefaultPresets();
+  constructor(drumkit, loadPresetComponent) {
+    this.#saveDefaultPresets();
     this.#drumkit = drumkit;
+    this.#loadPresetComponent = loadPresetComponent;
   }
 
-  async #setDefaultPresets() {
+  async #saveDefaultPresets() {
     const root = Constants.getDrumPresetRoot();
     const tones = Constants.getToneNames();
 
     for (const tone of tones) {
       const res = await fetch(`${root}${tone}.json`);
       const jsonObj = await res.json();
-      this.#presets.set(tone, jsonObj);
+      this.#saveNewPreset(tone, "#43648a", jsonObj);
     }
+  }
+
+  #saveNewPreset(name, color, jsonObj) {
+    this.#presets.set(name, jsonObj);
+    const presetCard = this.#loadPresetComponent.addPresetCard(name, color);
+    presetCard.addEventListener("click", () => {
+      this.applyPreset(name);
+    });
   }
 
   applyPreset(presetName) {
@@ -34,7 +45,7 @@ export class PresetManager {
       );
     }
 
-    for (const drumpart of Constants.getDrumPartNames) {
+    for (const drumpart of Constants.getDrumPartNames()) {
       const volume = presetJsonObj[drumpart]["volume"];
       const tone = presetJsonObj[drumpart]["tone"];
 

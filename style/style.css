@@ -3,7 +3,7 @@
 :root {
   --background-color-main: #000;
   --background-color-alt: #242020;
-  --border-color: rgb(37 28 22);
+  --border-color: #5e5c54;
   --font-color: #ccc398;
   --drumkit-image-center-adjustment: -7%;
   --drumkit-area-height: 60vh;
@@ -11,6 +11,10 @@
   --drumkit__pop-triggers-group-width: 65vw;
   --drumpart-pop-trigger-zIndex: 10;
   --drumkit-popover-zIndex: 20;
+
+  /* popover general */
+  --popover-height: 50vh;
+  --popover-width: 50vw;
 }
 
 *,

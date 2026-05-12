@@ -1,14 +1,12 @@
 /* stylelint-disable custom-property-pattern */
 /* stylelint-disable selector-class-pattern */
 .popover {
-  --height: 50vh;
-  --width: 50vw;
-  --position-x: calc(50vw - var(--width)/2);
-  --position-y: calc(50vh - var(--height)/2);
+  --position-x: calc(50vw - var(--popover-width)/2);
+  --position-y: calc(50vh - var(--popover-height)/2);
 
   position: absolute;
-  width: var(--width);
-  height: var(--height);
+  width: var(--popover-width);
+  height: var(--popover-height);
   left: var(--position-x);
   top: var(--position-y);
   z-index: var(--drumkit-popover-zIndex);
@@ -32,6 +30,7 @@
   }
 }
 
+/* #region drumpart popover */
 .drumpart-pop-trigger {
   background-color: rgb(255 250 250 / 0%);
   border-radius: 100%;
@@ -129,25 +128,21 @@
   height: 42%;
 }
 
-/* todo: i don't know what this does but i m afraid to delete it */
 .snare-volume {
   width: 5vw;
   height: 5vh;
 }
 
-/* drumkit part popover */
 .drumpart-popover {
   display: grid;
   grid-template-rows: 85% 15%;
   grid-template-columns: repeat(6, 1fr);
-  border: 1px solid var(--border-color);
 }
 
 .drumpart-popover__main {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid var(--border-color);
   grid-column: 1 / -1;
   grid-row: 1 / 2;
 }
@@ -183,7 +178,6 @@
   align-items: stretch;
   justify-content: space-around;
   flex: 1;
-  border: 1px solid var(--border-color);
   width: 100%;
   container-type: size;
   grid-column: 1 / -1;
@@ -201,3 +195,51 @@
   justify-content: center;
   text-shadow: 2px 3px 3px rgb(190 155 155 / 40%);
 }
+
+/* #endregion drumpart popover */
+
+/* #region preset popover */
+.load-preset-popover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-preset-popover__main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 3%;
+  width: 95%;
+  height: 95%;
+  padding: 4%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.preset-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  width: 100%;
+  height: calc(var(--popover-height) / 5);
+  border: 1px solid var(--border-color);
+  border-radius: 3%;
+}
+
+.preset-card:hover {
+  transform: scale(1.05);
+  border: 1px solid var(--font-color);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  cursor: pointer;
+}
+
+.preset-card:active {
+  transform: scale(0.95);
+  border: 1px solid var(--border-color);
+  transition: all 0.105s cubic-bezier(0.2, 0, 0, 1);
+  cursor: pointer;
+}
+
+/* #endregion preset popover */

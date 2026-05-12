@@ -95,7 +95,7 @@ class PopoverManager {
   };
 
   // called after all popovers have been registered
-  registerCancelButtons() {
+  registerClickCancelButton() {
     // close by clicking 'X' button
     for (const popover of this.#registeredPopovers.values()) {
       const cancelButton = popover.querySelector("#cancel");
@@ -170,19 +170,36 @@ class PopoverManager {
       document.querySelector("#drumkit-tom2-popover"),
     );
   }
+
+  /** @param {Array<HTMLDivElement>} registeredPopovers  */
+  registerClickOutside(registeredPopovers) {
+    window.addEventListener("click", (ev) => {
+      if (!registeredPopovers.includes(this.#currentPoppedStack.at(-1))) {
+        return;
+      }
+
+      this.#closeByClickOutside(ev);
+    });
+  }
 }
 
 // register listener code
 const manager = new PopoverManager();
 
+const savePresetPopover = document.querySelector("#save-preset-popover");
+const loadPresetPopover = document.querySelector("#load-preset-popover");
+
 manager.registerPopoverOnClick(
   document.querySelector("#save-preset-button"),
-  document.querySelector("#save-preset-popover"),
+  savePresetPopover,
 );
 manager.registerPopoverOnClick(
   document.querySelector("#load-preset-button"),
-  document.querySelector("#load-preset-popover"),
+  loadPresetPopover,
 );
 
 manager.registerDrumpartTriggers();
-manager.registerCancelButtons();
+
+// do at last
+manager.registerClickOutside([savePresetPopover, loadPresetPopover]);
+manager.registerClickCancelButton();
