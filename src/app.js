@@ -1,8 +1,8 @@
-import { DrumFactory } from "./drum-factory.js";
-import { MasterBus } from "./master-bus.js";
-import { KeyboardListener } from "./keyboard-listener.js";
-import { PresetManager } from "./preset-manager.js";
-import { DrumKit } from "./drumkit.js";
+import { DrumFactory } from "./core/drum-factory.js";
+import { MasterBus } from "./core/master-bus.js";
+import { KeyboardListener } from "./core/keyboard-listener.js";
+import { PresetManager } from "./preset/preset-manager.js";
+import { DrumKit } from "./core/drumkit.js";
 
 export class App {
   #auctx = new AudioContext();

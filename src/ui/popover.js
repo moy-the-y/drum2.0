@@ -5,10 +5,6 @@ class PopoverManager {
   #isFreezing = false;
 
   constructor() {
-    // // default close behavior
-    // window.addEventListener("click", (triggerEvent) =>
-    //   this.#closeByClickOutside(triggerEvent),
-    // );
     this.#setPreventDefault();
   }
 

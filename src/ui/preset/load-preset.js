@@ -1,0 +1,5 @@
+class LoadPreset {
+    constructor() {
+        
+    }
+}

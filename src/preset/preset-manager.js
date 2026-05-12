@@ -1,9 +1,9 @@
-import { Constants } from "./constants.js";
-import { DrumKit } from "./drumkit.js";
+import { Constants } from "../core/constants.js";
+import { DrumKit } from "../core/drumkit.js";
 
 export class PresetManager {
   /** @type {Map<String, Object>} */
-  #presets;
+  #presets = new Map();
 
   /** @type {DrumKit} */
   #drumkit;
@@ -11,22 +11,19 @@ export class PresetManager {
   //todo element listener and shit..
 
   constructor(drumkit) {
-    this.#presets = this.#initPresets();
+    this.#setDefaultPresets();
     this.#drumkit = drumkit;
   }
 
-  async #initPresets() {
-    const toneNamePresetMap = new Map();
+  async #setDefaultPresets() {
     const root = Constants.getDrumPresetRoot();
     const tones = Constants.getToneNames();
 
     for (const tone of tones) {
       const res = await fetch(`${root}${tone}.json`);
       const jsonObj = await res.json();
-      toneNamePresetMap.set(tone, jsonObj);
+      this.#presets.set(tone, jsonObj);
     }
-
-    return toneNamePresetMap;
   }
 
   applyPreset(presetName) {

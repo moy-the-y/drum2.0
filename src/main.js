@@ -1,4 +1,4 @@
-import { App } from "./core/app.js";
+import { App } from "./app.js";
 import "./ui/ticker.js";
 import "./ui/popover.js";
 
