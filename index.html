@@ -57,10 +57,44 @@
 
     <!-- #region Popovers -->
     <div
-      class="popover popover--style"
+      class="popover popover--style popover-1"
       id="save-preset-popover"
       style="display: none"
-    ></div>
+    >
+      <div class="popover-1__main">
+        <div class="popover-1__main__component">
+          <label for="preset-name" class="popover-1__label">preset name</label>
+          <input
+            type="text"
+            name="preset-name"
+            id="save-preset__input-name"
+            class="popover-1__input short-text-input"
+            minlength="1"
+            maxlength="15"
+            autocomplete="off"
+            placeholder="type here..."
+          />
+        </div>
+        <div class="popover-1__main__component">
+          <label for="preset-color" class="popover-1__label">color</label>
+          <input
+            type="color"
+            name="preset-color"
+            id="save-preset__input-color"
+            class="popover-1__input color-picker"
+            value="#2FB191"
+          />
+        </div>
+      </div>
+      <div class="popover-1__button-group">
+        <button id="confirm" class="popover-1__button" draggable="false">
+          🗸
+        </button>
+        <button id="cancel" class="popover-1__button" draggable="false">
+          𐄂
+        </button>
+      </div>
+    </div>
     <div
       class="popover popover--style load-preset-popover"
       id="load-preset-popover"
@@ -77,9 +111,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="snare-volume">volume</label>
           <input
             type="range"
@@ -91,7 +123,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="snare-tone">tone</label>
           <select name="snare-tone" id="snare-tone" class="select--style">
             <option value="rock">rock</option>
@@ -111,9 +143,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="hihat-open-volume">volume</label>
           <input
             type="range"
@@ -125,7 +155,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="hihat-open-tone">tone</label>
           <select
             name="hihat-open-tone"
@@ -149,9 +179,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="hihat-close-volume">volume</label>
           <input
             type="range"
@@ -163,7 +191,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="hihat-close-tone">tone</label>
           <select
             name="hihat-close-tone"
@@ -187,9 +215,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="crash-volume">volume</label>
           <input
             type="range"
@@ -201,7 +227,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="crash-tone">tone</label>
           <select name="crash-tone" id="crash-tone" class="select--style">
             <option value="rock">rock</option>
@@ -221,9 +247,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="ride-volume">volume</label>
           <input
             type="range"
@@ -235,7 +259,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="ride-tone">tone</label>
           <select name="ride-tone" id="ride-tone" class="select--style">
             <option value="rock">rock</option>
@@ -255,9 +279,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="kick-volume">volume</label>
           <input
             type="range"
@@ -269,7 +291,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="kick-tone">tone</label>
           <select name="kick-tone" id="kick-tone" class="select--style">
             <option value="rock">rock</option>
@@ -289,9 +311,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="tom1-volume">volume</label>
           <input
             type="range"
@@ -303,7 +323,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="tom1-tone">tone</label>
           <select name="tom1-tone" id="tom1-tone" class="select--style">
             <option value="rock">rock</option>
@@ -323,9 +343,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="tom2-volume">volume</label>
           <input
             type="range"
@@ -337,7 +355,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="tom2-tone">tone</label>
           <select name="tom2-tone" id="tom2-tone" class="select--style">
             <option value="rock">rock</option>
@@ -357,9 +375,7 @@
       style="display: none"
     >
       <div class="drumpart-popover__main">
-        <div
-          class="popover__volume-container drumpart-popover__main__component"
-        >
+        <div class="drumpart-popover__main__component">
           <label for="tom3-volume">volume</label>
           <input
             type="range"
@@ -371,7 +387,7 @@
             value="0.75"
           />
         </div>
-        <div class="popover__tone-container drumpart-popover__main__component">
+        <div class="drumpart-popover__main__component">
           <label for="tom3-tone">tone</label>
           <select name="tom3-tone" id="tom3-tone" class="select--style">
             <option value="rock">rock</option>

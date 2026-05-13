@@ -201,5 +201,5 @@ manager.registerPopoverOnClick(
 manager.registerDrumpartTriggers();
 
 // do at last
-manager.registerClickOutside([savePresetPopover, loadPresetPopover]);
+manager.registerClickOutside([loadPresetPopover]);
 manager.registerClickCancelButton();

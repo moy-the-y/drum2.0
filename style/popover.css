@@ -30,6 +30,72 @@
   }
 }
 
+/* #region reusable popover-1 style */
+.popover-1 {
+  display: grid;
+  grid-template-rows: 85% 15%;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.popover-1 > * {
+  font-size: 2vh;
+}
+
+.popover-1__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.popover-1__main__component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.popover-1__button-group {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex: 1;
+  width: 100%;
+  container-type: size;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.popover-1__button {
+  flex: 1;
+  color: var(--font-color);
+  font-size: 66cqh;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 3px 3px rgb(190 155 155 / 40%);
+}
+
+.popover-1__select {
+  width: 80%;
+  height: 10%;
+}
+
+.popover-1__label {
+  user-select: none;
+}
+
+.popover-1__input {
+  width: 30%;
+}
+
+/* #endregion */
+
 /* #region drumpart popover */
 .drumpart-pop-trigger {
   background-color: rgb(255 250 250 / 0%);
@@ -198,7 +264,7 @@
 
 /* #endregion drumpart popover */
 
-/* #region preset popover */
+/* #region load preset popover */
 .load-preset-popover {
   display: flex;
   align-items: center;
@@ -242,4 +308,64 @@
   cursor: pointer;
 }
 
-/* #endregion preset popover */
+/* #endregion load preset popover */
+
+/* #region save preset popover */
+.short-text-input {
+  width: 70%;
+  height: auto;
+  aspect-ratio: 15 / 2;
+  background-color: var(--background-color-alt);
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3%;
+  border: 1px solid var(--font-color);
+  caret-shape: underscore;
+  font-size: smaller;
+  transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  line-height: 3;
+}
+
+.short-text-input::selection {
+  background-color: rgb(1 40 82);
+}
+
+.short-text-input:hover {
+  transform: scale(1.1);
+  transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.color-picker {
+  width: 24%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border-radius: 25%;
+  border: 3px groove var(--border-color);
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.color-picker:hover {
+  cursor: pointer;
+  border-radius: 25%;
+  border: 3px groove #7e7c71;
+  transform: scale(1.1);
+  transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.color-picker:active {
+  transform: scale(1);
+  transition: all 0.07s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+  border: 0;
+}
+
+/* #endregion save preset popover */
