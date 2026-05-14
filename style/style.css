@@ -3,6 +3,7 @@
 :root {
   --background-color-main: #000;
   --background-color-alt: #242020;
+  --background-color-alt--transparent: #242020bb;
   --border-color: #5e5c54;
   --font-color: #ccc398;
   --drumkit-image-center-adjustment: -7%;
@@ -24,6 +25,7 @@
   font-weight: 400;
   font-style: normal;
   color: var(--font-color);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,11 +42,15 @@ body {
 button {
   user-select: none;
   background-color: var(--background-color-alt);
+  transform: scale(1);
+  transition: all 0.28s cubic-bezier(0.2, 0, 0, 1);
 }
 
 button:hover {
   border-color: var(--font-color);
   cursor: pointer;
+  transform: scale(1.09);
+  transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 button:active {
@@ -115,7 +121,7 @@ button:active {
   container-type: size;
 }
 
-.preset-button-group > button {
+.preset-button-group button {
   height: 100cqh;
   font-size: 50cqh;
 }
