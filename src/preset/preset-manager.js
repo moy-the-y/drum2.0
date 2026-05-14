@@ -31,7 +31,7 @@ export class PresetManager {
     for (const tone of tones) {
       const res = await fetch(`${root}${tone}.json`);
       const jsonObj = await res.json();
-      this.#savePreset(tone, "#43648a", jsonObj);
+      this.#savePreset(tone, "#4A0E17", jsonObj);
     }
   }
 
@@ -44,6 +44,7 @@ export class PresetManager {
           this.#savePresetComponent.colorInput.value,
           this.#getCurrentSetup(),
         );
+        this.#savePresetComponent.nameInput.value = "";
       });
 
     this.#savePresetComponent.popover

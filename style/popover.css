@@ -22,9 +22,9 @@ body {
   transform-style: preserve-3d;
 }
 
-body .popover {
+/* body .popover {
   transform: rotateX(5deg) translateZ(50px);
-}
+} */
 
 /* #endregion popover 3d */
 
@@ -32,13 +32,13 @@ body .popover {
   background-color: var(--background-color-alt--transparent);
 
   /* pop-out animation */
-  transform: scale(1);
-  transition: transform 2s cubic-bezier(0.2, 0, 0, 1);
+  transform: scale(1) rotateX(5deg) rotateY(0deg) translateZ(50px);
+  transition: all 0.6s cubic-bezier(0.2, 0, 0, 1);
 }
 
 @starting-style {
   .popover--style {
-    transform: scale(0.1);
+    transform: scale(0.8) rotateX(-1deg) rotateY(6deg) translateZ(50px) !important;
   }
 }
 
