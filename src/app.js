@@ -4,6 +4,8 @@ import { KeyboardListener } from "./core/keyboard-listener.js";
 import { PresetManager } from "./preset/preset-manager.js";
 import { DrumKit } from "./core/drumkit.js";
 import { ComponentFactory } from "./ui/component-factory.js";
+import { PopoverManager } from "./ui/popover.js";
+import "./ui/ticker.js";
 
 export class App {
   #auctx = new AudioContext();
@@ -16,7 +18,12 @@ export class App {
 
   #keyboardListener;
 
+  #popoverManager;
+
   constructor() {
+    this.#popoverManager = new PopoverManager();
+    this.#popoverManager.initializeUILogic();
+
     this.#masterBus = new MasterBus(this.#auctx);
 
     const drumFactory = new DrumFactory(
@@ -24,7 +31,7 @@ export class App {
       this.#masterBus.getMasterGainNode(),
     );
 
-    const uiComponentFactory = new ComponentFactory();
+    const uiComponentFactory = new ComponentFactory(this.#popoverManager);
 
     this.asyncBuild(this.#auctx, drumFactory, uiComponentFactory);
   }

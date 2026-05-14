@@ -2,13 +2,18 @@ import { LoadPresetComponent } from "./preset/load-preset-component.js";
 import { SavePresetComponent } from "./preset/save-preset-component.js";
 
 export class ComponentFactory {
-  constructor() {}
+  #popoverManager;
+
+  constructor(popoverManager) {
+    this.#popoverManager = popoverManager;
+  }
 
   buildLoadPreset() {
     return new LoadPresetComponent(
       document.querySelector("#load-preset-popover__main"),
       "preset-name",
       "preset-card",
+      this.#popoverManager,
     );
   }
 

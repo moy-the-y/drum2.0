@@ -1,4 +1,4 @@
-class PopoverManager {
+export class PopoverManager {
   #currentPoppedStack = new Array();
   #registeredPopovers = new Map(); // trigger : popover
 
@@ -31,18 +31,18 @@ class PopoverManager {
       return;
     }
 
-    this.#closePopover();
+    this.closePopover();
   };
 
   #closeByClickCancel = () => {
-    this.#closePopover();
+    this.closePopover();
   };
 
   #closeByClickConfirm = () => {
-    this.#closePopover();
+    this.closePopover();
   };
 
-  #closePopover = () => {
+  closePopover = () => {
     this.#currentPoppedStack.pop().style = "display:none";
     this.#isFreezing = false; // reenable other triggers.
   };
@@ -63,7 +63,7 @@ class PopoverManager {
     return false;
   };
 
-  registerPopoverOnClick = (triggerElement, popoverDiv) => {
+  #registerPopoverOnClick = (triggerElement, popoverDiv) => {
     // main logic
     triggerElement.addEventListener("click", (ev) => {
       ev.stopPropagation();
@@ -95,7 +95,7 @@ class PopoverManager {
   };
 
   // called after all popovers have been registered
-  registerClickCancelButton() {
+  #registerClickCancelButton() {
     // close by clicking 'X' button
     for (const popover of this.#registeredPopovers.values()) {
       const cancelButton = popover.querySelector("#cancel");
@@ -121,7 +121,7 @@ class PopoverManager {
     }
   }
 
-  registerDrumpartTriggers() {
+  #registerDrumpartTriggers() {
     const baseZ = getComputedStyle(document.documentElement).getPropertyValue(
       "--drumpart-pop-trigger-zIndex",
     );
@@ -133,46 +133,46 @@ class PopoverManager {
     const tom2Trigger = document.querySelector("#drumpart-pop-trigger-tom2");
     tom2Trigger.style.zIndex = baseZ + tom2Adjust;
 
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-kick"),
       document.querySelector("#drumkit-kick-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-snare"),
       document.querySelector("#drumkit-snare-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-hihat-open"),
       document.querySelector("#drumkit-hihat-open-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-hihat-close"),
       document.querySelector("#drumkit-hihat-close-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-crash"),
       document.querySelector("#drumkit-crash-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       tom1Trigger,
       document.querySelector("#drumkit-tom1-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-tom3"),
       document.querySelector("#drumkit-tom3-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       document.querySelector("#drumpart-pop-trigger-ride"),
       document.querySelector("#drumkit-ride-popover"),
     );
-    manager.registerPopoverOnClick(
+    this.#registerPopoverOnClick(
       tom2Trigger,
       document.querySelector("#drumkit-tom2-popover"),
     );
   }
 
   /** @param {Array<HTMLDivElement>} registeredPopovers  */
-  registerClickOutside(registeredPopovers) {
+  #registerClickOutside(registeredPopovers) {
     window.addEventListener("click", (ev) => {
       if (!registeredPopovers.includes(this.#currentPoppedStack.at(-1))) {
         return;
@@ -181,25 +181,24 @@ class PopoverManager {
       this.#closeByClickOutside(ev);
     });
   }
+
+  initializeUILogic() {
+    const savePresetPopover = document.querySelector("#save-preset-popover");
+    const loadPresetPopover = document.querySelector("#load-preset-popover");
+
+    this.#registerPopoverOnClick(
+      document.querySelector("#save-preset-button"),
+      savePresetPopover,
+    );
+    this.#registerPopoverOnClick(
+      document.querySelector("#load-preset-button"),
+      loadPresetPopover,
+    );
+
+    this.#registerDrumpartTriggers();
+
+    // do at last
+    this.#registerClickOutside([loadPresetPopover]);
+    this.#registerClickCancelButton();
+  }
 }
-
-// register listener code
-const manager = new PopoverManager();
-
-const savePresetPopover = document.querySelector("#save-preset-popover");
-const loadPresetPopover = document.querySelector("#load-preset-popover");
-
-manager.registerPopoverOnClick(
-  document.querySelector("#save-preset-button"),
-  savePresetPopover,
-);
-manager.registerPopoverOnClick(
-  document.querySelector("#load-preset-button"),
-  loadPresetPopover,
-);
-
-manager.registerDrumpartTriggers();
-
-// do at last
-manager.registerClickOutside([loadPresetPopover]);
-manager.registerClickCancelButton();

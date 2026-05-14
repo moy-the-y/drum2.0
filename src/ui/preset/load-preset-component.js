@@ -1,3 +1,5 @@
+import { PopoverManager } from "../popover.js";
+
 export class LoadPresetComponent {
   #presetContainer;
 
@@ -5,10 +7,19 @@ export class LoadPresetComponent {
   #cardNameAttr;
   #cardClass;
 
-  constructor(presetCardContainer, presetCardNameAttribute, presetCardClass) {
+  /** @type {PopoverManager} */
+  #popoverManager;
+
+  constructor(
+    presetCardContainer,
+    presetCardNameAttribute,
+    presetCardClass,
+    popoverManager,
+  ) {
     this.#presetContainer = presetCardContainer;
     this.#cardNameAttr = presetCardNameAttribute;
     this.#cardClass = presetCardClass;
+    this.#popoverManager = popoverManager;
   }
 
   #tryGetCard(name) {
@@ -31,6 +42,10 @@ export class LoadPresetComponent {
     card.style.backgroundColor = color;
     card.classList.add(this.#cardClass);
     card[this.#cardNameAttr] = name;
+
+    card.addEventListener("click", () => {
+      this.#popoverManager.closePopover();
+    });
 
     this.#presetContainer.appendChild(card);
 
