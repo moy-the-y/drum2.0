@@ -1,4 +1,5 @@
 import { LoadPresetComponent } from "./preset/load-preset-component.js";
+import { SavePresetComponent } from "./preset/save-preset-component.js";
 
 export class ComponentFactory {
   constructor() {}
@@ -8,6 +9,17 @@ export class ComponentFactory {
       document.querySelector("#load-preset-popover__main"),
       "preset-name",
       "preset-card",
+    );
+  }
+
+  buildSavePreset() {
+    const savePresetPopover = document.querySelector("#save-preset-popover");
+    return new SavePresetComponent(
+      savePresetPopover,
+      savePresetPopover.querySelector("input[type='text']"),
+      savePresetPopover.querySelector("input[type='color']"),
+      savePresetPopover.querySelector("#confirm"),
+      savePresetPopover.querySelector("cancel"),
     );
   }
 }

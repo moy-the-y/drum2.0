@@ -146,6 +146,14 @@ export class DrumPart {
     this.#toneSettingElement.value = tone;
   };
 
+  get currentTone() {
+    return this.#currentTone;
+  }
+
+  get currentVolume() {
+    return this.#currentVolume;
+  }
+
   playSound = () => {
     const sourceNode = new AudioBufferSourceNode(this.#auctx, {
       buffer: this.#toneAudioBuffers.get(this.#currentTone),

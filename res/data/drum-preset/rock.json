@@ -1,38 +1,38 @@
 {
   "snare": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
   "kick": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
   "hihat-open": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
   "hihat-close": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
   "crash": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
   "ride": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
-  "tom1": {
-    "volume": 1,
+  "tom0.75": {
+    "volume": 0.75,
     "tone": "rock"
   },
   "tom2": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   },
   "tom3": {
-    "volume": 1,
+    "volume": 0.75,
     "tone": "rock"
   }
 }

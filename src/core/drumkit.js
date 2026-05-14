@@ -22,4 +22,8 @@ export class DrumKit {
   getPart(drumpartName) {
     return this.#drumparts.get(drumpartName);
   }
+
+  get drumparts() {
+    return this.#drumparts;
+  }
 }

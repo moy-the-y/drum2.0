@@ -41,6 +41,7 @@ export class App {
     this.#presetManager = new PresetManager(
       this.#drumkit,
       uiComponentFactory.buildLoadPreset(),
+      uiComponentFactory.buildSavePreset(),
     );
     this.#keyboardListener = new KeyboardListener(audioContext, this.#drumkit);
   }
