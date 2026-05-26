@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/animation.css" />
     <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/popover.css" />
+    <link rel="stylesheet" href="./style/popovers/popover.css" />
+    <link rel="stylesheet" href="./style/popovers/metronome.css" />
+    <!-- 3rd parties -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -104,6 +106,49 @@
         class="load-preset-popover__main"
         id="load-preset-popover__main"
       ></div>
+    </div>
+    <div
+      class="popover popover--style metronome-layout"
+      id="metronome-popover"
+      style="display: none"
+    >
+      <div id="" class="metronome__bpm-container">
+        <button id="metronome-dec-bpm">
+          <svg>
+            <use href="/style/popovers/popover-svgs.svg#svg-left-arrow"></use>
+          </svg>
+        </button>
+        <span id="metronome-bpm">300</span>
+        <button id="metronome-inc-bpm">
+          <svg>
+            <use href="/style/popovers/popover-svgs.svg#svg-right-arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="" class="metronome__settings-container">
+        <label for="metronome-volume" class="metronome-volume-label"
+          >volume</label
+        >
+        <label for="metronome-tone" class="metronome-tone-label">tone</label>
+        <input
+          type="range"
+          name="metronome-volume"
+          id="metronome-volume"
+          class="slider metronome-volume"
+        />
+        <select
+          name=""
+          id="metronome-tone"
+          class="select--style metronome-tone"
+        >
+          <option value="classic">classic</option>
+          <option value="cowbell">cow bell</option>
+        </select>
+      </div>
+      <div id="" class="vertical-button-container metronome__button-container">
+        <button id="metronome-tap" class="">tap</button>
+        <button id="metronome-toggle" class="">start/stop</button>
+      </div>
     </div>
     <div
       class="popover popover--style drumpart-popover"
@@ -409,6 +454,9 @@
       </button>
       <button class="preset-button" id="load-preset-button" draggable="false">
         load preset
+      </button>
+      <button class="preset-button" id="metronome-pop-button" draggable="false">
+        metronome
       </button>
     </div>
     <input

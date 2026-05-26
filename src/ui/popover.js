@@ -185,6 +185,7 @@ export class PopoverManager {
   initializeUILogic() {
     const savePresetPopover = document.querySelector("#save-preset-popover");
     const loadPresetPopover = document.querySelector("#load-preset-popover");
+    const metronomePopover = document.querySelector("#metronome-popover");
 
     this.#registerPopoverOnClick(
       document.querySelector("#save-preset-button"),
@@ -194,11 +195,15 @@ export class PopoverManager {
       document.querySelector("#load-preset-button"),
       loadPresetPopover,
     );
+    this.#registerPopoverOnClick(
+      document.querySelector("#metronome-pop-button"),
+      metronomePopover,
+    );
 
     this.#registerDrumpartTriggers();
 
     // do at last
-    this.#registerClickOutside([loadPresetPopover]);
+    this.#registerClickOutside([loadPresetPopover, metronomePopover]);
     this.#registerClickCancelButton();
   }
 }

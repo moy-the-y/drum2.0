@@ -16,6 +16,7 @@
   /* popover general */
   --popover-height: 50vh;
   --popover-width: 50vw;
+  --popover-font-size: 2vh;
 }
 
 *,
@@ -185,4 +186,31 @@ button:active {
   width: var(--cover-width);
   height: var(--height);
   background-color: var(--background-color-main);
+}
+
+/* label */
+label {
+  user-select: none;
+}
+
+/* vertical button group */
+.vertical-button-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex: 1;
+  width: 100%;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.vertical-button-container button {
+  flex: 1;
+  color: var(--font-color);
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 3px 3px rgb(190 155 155 / 40%);
 }
