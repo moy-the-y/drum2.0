@@ -30,6 +30,10 @@ export class Constants {
     ]),
   );
 
+  static isHostedOnGithub = false;
+
+  static #githubRoot = "/drum2.0";
+
   static #toneNames = Object.freeze(["rock", "punk"]);
 
   static #drumAudioAssetDirectory = "/res/audio/drum/";
@@ -51,7 +55,7 @@ export class Constants {
   }
 
   static getDrumAudioRoot() {
-    return Constants.#drumAudioAssetDirectory;
+    return this.#tryUpdatePath(Constants.#drumAudioAssetDirectory);
   }
 
   static getDefaultKeyMap() {
@@ -59,15 +63,23 @@ export class Constants {
   }
 
   static getDrumPresetRoot() {
-    return this.#drumDataPresetDirectory;
+    return this.#tryUpdatePath(this.#drumDataPresetDirectory);
   }
 
   // metronome
   static getMetronomeAudioAssetDirectory() {
-    return Constants.#metronomeAudioAssetDirectory;
+    return this.#tryUpdatePath(Constants.#metronomeAudioAssetDirectory);
   }
 
   static getMetronomeToneNames() {
     return Constants.#metronomeToneNames;
+  }
+
+  static #tryUpdatePath(path) {
+    if (this.isHostedOnGithub) {
+      return this.#githubRoot + path;
+    }
+
+    return path;
   }
 }

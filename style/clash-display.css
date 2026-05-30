@@ -17,59 +17,89 @@
 *
 */
 @font-face {
-  font-family: 'ClashDisplay-Extralight';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Extralight.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Extralight.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Extralight.ttf') format('truetype');
+  font-family: ClashDisplay-Extralight;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Extralight.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Extralight.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Extralight.ttf")
+      format("truetype");
   font-weight: 200;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'ClashDisplay-Light';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Light.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Light.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Light.ttf') format('truetype');
+  font-family: ClashDisplay-Light;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Light.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Light.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Light.ttf")
+      format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'ClashDisplay-Regular';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Regular.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Regular.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Regular.ttf') format('truetype');
+  font-family: ClashDisplay-Regular;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Regular.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Regular.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Regular.ttf")
+      format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'ClashDisplay-Medium';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Medium.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Medium.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Medium.ttf') format('truetype');
+  font-family: ClashDisplay-Medium;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Medium.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Medium.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Medium.ttf")
+      format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'ClashDisplay-Semibold';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Semibold.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Semibold.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Semibold.ttf') format('truetype');
+  font-family: ClashDisplay-Semibold;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Semibold.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Semibold.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Semibold.ttf")
+      format("truetype");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'ClashDisplay-Bold';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Bold.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Bold.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Bold.ttf') format('truetype');
+  font-family: ClashDisplay-Bold;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Bold.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Bold.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Bold.ttf")
+      format("truetype");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
+
 /**
 * This is a variable font
 * You can control variable axes as shown below:
@@ -79,12 +109,15 @@
 'wght' (range from 200.0 to 700.0
 */
 @font-face {
-  font-family: 'ClashDisplay-Variable';
-  src: url('/res/visual/fonts/clash-display/ClashDisplay-Variable.woff2') format('woff2'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Variable.woff') format('woff'),
-       url('/res/visual/fonts/clash-display/ClashDisplay-Variable.ttf') format('truetype');
+  font-family: ClashDisplay-Variable;
+  src:
+    url("../res/visual/fonts/clash-display/ClashDisplay-Variable.woff2")
+      format("woff2"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Variable.woff")
+      format("woff"),
+    url("../res/visual/fonts/clash-display/ClashDisplay-Variable.ttf")
+      format("truetype");
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
 }
-

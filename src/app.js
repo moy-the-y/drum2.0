@@ -6,9 +6,12 @@ import { DrumKit } from "./core/drumkit.js";
 import { ComponentFactory } from "./ui/component-factory.js";
 import { PopoverManager } from "./ui/popover.js";
 import { Metronome } from "./metronome/metronome.js";
+import { Constants } from "./core/constants.js";
 import "./ui/ticker.js";
 
 export class App {
+  #isHostedOnGithub;
+
   #auctx = new AudioContext();
 
   #masterBus;
@@ -23,7 +26,10 @@ export class App {
 
   #metronome;
 
-  constructor() {
+  constructor(isHostedOnGithub) {
+    this.#isHostedOnGithub = isHostedOnGithub;
+    Constants.isHostedOnGithub = this.#isHostedOnGithub;
+
     this.#popoverManager = new PopoverManager();
     this.#popoverManager.initializeUILogic();
 
