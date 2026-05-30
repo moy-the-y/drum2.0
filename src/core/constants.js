@@ -1,4 +1,5 @@
 export class Constants {
+  // drum
   static #drumPartNames = Object.freeze([
     "snare",
     "kick",
@@ -35,6 +36,12 @@ export class Constants {
 
   static #drumDataPresetDirectory = "/res/data/drum-preset/";
 
+  // metronome
+  static #metronomeToneNames = Object.freeze(["digital", "cowbell"]);
+
+  static #metronomeAudioAssetDirectory = "/res/audio/metronome/";
+
+  // drum
   static getDrumPartNames() {
     return Constants.#drumPartNames;
   }
@@ -53,5 +60,14 @@ export class Constants {
 
   static getDrumPresetRoot() {
     return this.#drumDataPresetDirectory;
+  }
+
+  // metronome
+  static getMetronomeAudioAssetDirectory() {
+    return Constants.#metronomeAudioAssetDirectory;
+  }
+
+  static getMetronomeToneNames() {
+    return Constants.#metronomeToneNames;
   }
 }

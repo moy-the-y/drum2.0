@@ -5,6 +5,7 @@ import { PresetManager } from "./preset/preset-manager.js";
 import { DrumKit } from "./core/drumkit.js";
 import { ComponentFactory } from "./ui/component-factory.js";
 import { PopoverManager } from "./ui/popover.js";
+import { Metronome } from "./metronome/metronome.js";
 import "./ui/ticker.js";
 
 export class App {
@@ -19,6 +20,8 @@ export class App {
   #keyboardListener;
 
   #popoverManager;
+
+  #metronome;
 
   constructor() {
     this.#popoverManager = new PopoverManager();
@@ -51,5 +54,12 @@ export class App {
       uiComponentFactory.buildSavePreset(),
     );
     this.#keyboardListener = new KeyboardListener(audioContext, this.#drumkit);
+
+    this.#metronome = new Metronome(
+      this.#auctx,
+      this.#masterBus.getMasterGainNode(),
+    );
+
+    await this.#metronome.initBuffers();
   }
 }
