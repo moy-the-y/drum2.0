@@ -1,3 +1,4 @@
+import { DrumpartHighlight } from "../ui/drumpart-highlight.js";
 import { Constants } from "./constants.js";
 import { DrumKit } from "./drumkit.js";
 
@@ -10,9 +11,13 @@ export class KeyboardListener {
 
   #keyMap = new Map();
 
-  constructor(audioContext, drumkit) {
+  /** @type {DrumpartHighlight} */
+  #drumpartHighlighter;
+
+  constructor(audioContext, drumkit, drumpartHighlighter) {
     this.#auctx = audioContext;
     this.#drumkit = drumkit;
+    this.#drumpartHighlighter = drumpartHighlighter;
     this.#resetKeyMap();
     this.#setListeners();
   }
@@ -33,6 +38,7 @@ export class KeyboardListener {
 
     const drumpartName = this.#keyMap.get(ev.key.toLowerCase());
     this.#drumkit.playDrumpart(drumpartName);
+    this.#drumpartHighlighter.highlight(drumpartName);
   }
 
   #resetKeyMap() {

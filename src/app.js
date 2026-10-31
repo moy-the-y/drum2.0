@@ -8,6 +8,7 @@ import { PopoverManager } from "./ui/popover.js";
 import { Metronome } from "./metronome/metronome.js";
 import { Constants } from "./core/constants.js";
 import "./ui/ticker.js";
+import { DrumpartHighlight } from "./ui/drumpart-highlight.js";
 
 export class App {
   #isHostedOnGithub;
@@ -59,7 +60,11 @@ export class App {
       uiComponentFactory.buildLoadPreset(),
       uiComponentFactory.buildSavePreset(),
     );
-    this.#keyboardListener = new KeyboardListener(audioContext, this.#drumkit);
+    this.#keyboardListener = new KeyboardListener(
+      audioContext,
+      this.#drumkit,
+      new DrumpartHighlight(),
+    );
 
     this.#metronome = new Metronome(
       this.#auctx,
